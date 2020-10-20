@@ -1,12 +1,11 @@
 {
-  "name": "erusso7/redsys-rest",
+  "name": "alexaf2000/redsys-rest",
   "description": "Simple library to use the REST API from RedSys",
   "type": "library",
   "license": "mit",
   "authors": [
     {
-      "name": "Ezequiel Russo",
-      "email": "ezequiel.rube@gmail.com"
+      "name": "Alex AF",
     }
   ],
   "autoload": {
