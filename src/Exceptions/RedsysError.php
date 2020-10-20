@@ -143,7 +143,7 @@ class RedsysError extends RuntimeException
         'SIS0214' => 'El comercio no admite devoluciones.',
         'SIS0216' => 'Error Ds_Merchant_CVV2 tiene mas de 3/4 posiciones.',
         'SIS0217' => 'Error de formato en Ds_Merchant_CVV2.',
-        'SIS0218' => 'El comercio no permite operaciones seguras por la entrada /operaciones.',
+        'SIS0218' => 'El comercio no permite operaciones seguras por las entradas "operaciones" o "WebService"',
         'SIS0219' => 'Error el número de operaciones de la tarjeta supera el límite permitido para el comercio.',
         'SIS0220' => 'Error el importe acumulado de la tarjeta supera el límite permitido para el comercio.',
         'SIS0221' => 'Error el CVV2 es obligatorio.',
