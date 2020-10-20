@@ -14,18 +14,18 @@ class Client
     private $config;
 
     public function __construct(
-        ClientInterface $client,
-        RequestBuilder $builder,
+
         ?Configurator $config = null
     ) {
-        $this->client = $client;
-        $this->builder = $builder;
+
+        $this->client = new \GuzzleHttp\Client;
+        $this->builder = new RequestBuilder(new Encrypter);
         $this->config = $config;
     }
 
     public function withConfig(Configurator $config): self
     {
-        return new self($this->client, $this->builder, $config);
+        return new self($this->builder, $config);
     }
 
     public function config(): Configurator
@@ -40,7 +40,9 @@ class Client
         }
 
         $params = $this->config->buildParamsFor($order);
+
         $request = $this->builder->build($this->config, $params);
+
         $response = $this->client->send($request);
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
