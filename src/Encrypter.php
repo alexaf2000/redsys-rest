@@ -12,6 +12,7 @@ class Encrypter
     public function encrypt3DES($order, $key)
     {
         $key = base64_decode($key);
+
         $l = (int)ceil(strlen($order) / 8) * 8;
 
         return substr(
