@@ -8,7 +8,7 @@ use RedsysRest\Common\CreditCard;
 use RedsysRest\Common\Currency;
 use RedsysRest\Common\Params;
 
-class Pay implements Order
+class Authorization implements Order
 {
     private const TYPE = 0;
     private $amount;
