@@ -22,7 +22,7 @@ class Configurator
         string $defaultCurrencyCode,
         string $defaultMerchant,
         string $defaultTerminal,
-        int $env = self::ENV_TEST
+        int $env = self::ENV_LIVE
     ) {
         $this->secret = $secret;
         $this->url = $env === self::ENV_TEST
