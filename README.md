@@ -16,7 +16,7 @@ Take a look to  [the official documentation](https://pagosonline.redsys.es/desar
 #### Usage:
 Run in your terminal
 ```
-$ composer require erusso7/redsys-rest
+$ composer require alexaf2000/redsys-rest
 ```
 
 **NOTE:** You can find a complete example under the `examples` folder. 
@@ -27,11 +27,11 @@ $ composer require erusso7/redsys-rest
 * Refund ([see docs](https://pagosonline.redsys.es/funcionalidades-devolucion.html))
 
 ##### To-do:
-* Authorization
+* Authorization with already tokenized credit card
 * Pre-Authorization
 * Cancellation
 * ....
 
-### Are you missing something? 
+### About the package
 
-:heart_eyes: **Easy to contribute:** Just implement a new order with the required parameters and that's it :smile:. ( Don't forget to test it :smirk: )
+Based on erusso7/redsys-rest.
