@@ -169,6 +169,7 @@ class RedsysError extends RuntimeException
         'SIS0321' => 'La referencia indicada en Ds_Merchant_Identifier no está asociada al comercio.',
         'SIS0322' => 'Error de formato en Ds_Merchant_Group.',
         'SIS0325' => 'Se ha pedido no mostrar pantallas pero no se ha enviado ninguna referencia de tarjeta.',
+        'SIS-REST-00001' => 'No se ha recibido el parámetro MerchantIdentifier en la respuesta.'
     ];
     // @codingStandardsIgnoreEnd
 

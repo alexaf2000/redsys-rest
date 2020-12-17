@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace RedsysRest;
 
@@ -6,6 +8,7 @@ use GuzzleHttp\ClientInterface;
 use RedsysRest\Exceptions\RedsysError;
 use RedsysRest\Exceptions\UnconfiguredClient;
 use RedsysRest\Orders\Order;
+use stdClass;
 
 class Client
 {
@@ -33,7 +36,7 @@ class Client
         return $this->config;
     }
 
-    public function execute(Order $order): void
+    public function execute(Order $order): stdClass
     {
         if ($this->config === null) {
             throw UnconfiguredClient::create();
@@ -46,8 +49,17 @@ class Client
         $response = $this->client->send($request);
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
+
         if (isset($responseBody['errorCode'])) {
-            throw RedsysError::create($responseBody['errorCode']);
+            throw RedsysError::create($responseBody["errorCode"]);
+        } else {
+            if (isset($responseBody["Ds_MerchantParameters"])) {
+                $decrypter = new Decrypter();
+                $finalResponse = $decrypter->decodeParameters($responseBody["Ds_MerchantParameters"]);
+                return $finalResponse;
+            } else {
+                throw RedsysError::create("SIS-REST-00001");
+            }
         }
     }
 }
